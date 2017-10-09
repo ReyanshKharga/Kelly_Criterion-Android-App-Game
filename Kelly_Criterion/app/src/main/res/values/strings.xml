@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Kelly_Criterion</string>
+    <string name="enter_bet_amount" />
+    <string name="current_amount" />
+    <string name="input_bet_amount" />
+    <string name="final_payout" />
+    <string name="payout_using_kelly_formula" />
+    <string name="error_messages" />
+    <string name="error_message" />
+    <string name="bet_amount" />
+</resources>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/kelly"
+    android:orientation="vertical"
+
+    tools:context="com.example.speedious.kelly_criterion.MainActivity">
+
+    <TextView
+        android:id="@+id/TVpresent_amt"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="19dp"
+        android:fontFamily="cursive"
+        android:text="Current Amount"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/TVcurrent_amt"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_alignBaseline="@+id/TVpresent_amt"
+        android:layout_alignBottom="@+id/TVpresent_amt"
+        android:layout_marginStart="12dp"
+        android:layout_toEndOf="@+id/TVpresent_amt"
+        android:fontFamily="sans-serif"
+        android:text="@string/current_amount"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/TVbet_amt"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignStart="@+id/TVpresent_amt"
+        android:layout_below="@+id/TVpresent_amt"
+        android:layout_marginTop="22dp"
+        android:fontFamily="cursive"
+        android:text="Bet Amount"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/Broll"
+        style="@android:style/Widget.Material.Light.Button.Inset"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/TVbet_amt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/kelly"
+        android:elevation="5dp"
+        android:fontFamily="monospace"
+        android:onClick="onRoll"
+        android:text="Roll the Dice"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/IVdice"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="17dp"
+        app:srcCompat="@drawable/die_face_5"
+        android:layout_below="@+id/Broll"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/TVfinal_payout"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/IVdice"
+        android:layout_marginTop="20dp"
+        android:layout_toStartOf="@+id/TFinput"
+        android:fontFamily="cursive"
+        android:text="Final Payout"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/TVpayout"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_alignTop="@+id/TVfinal_payout"
+        android:layout_toEndOf="@+id/Broll"
+        android:fontFamily="sans-serif"
+        android:text="@string/final_payout"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/TVkelly_amt"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:fontFamily="cursive"
+        android:text="Kelly Payout"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/TVpayout"
+        android:layout_alignStart="@+id/TVfinal_payout" />
+
+    <TextView
+        android:id="@+id/TVkellyPayout"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:text="@string/payout_using_kelly_formula"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_alignBaseline="@+id/TVkelly_amt"
+        android:layout_alignBottom="@+id/TVkelly_amt"
+        android:layout_alignStart="@+id/TVpayout" />
+
+    <TextView
+        android:id="@+id/TVerror_msg"
+        android:layout_width="350dp"
+        android:layout_height="270dp"
+        android:layout_below="@+id/Broll"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/transparent"
+        android:fontFamily="cursive"
+        android:text="@string/error_message"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/TFinput"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_above="@+id/Broll"
+        android:layout_alignStart="@+id/TVcurrent_amt"
+        android:layout_marginBottom="11dp"
+        android:ems="10"
+        android:hint="   Bet"
+        android:inputType="textPersonName"
+        android:text="@string/bet_amount"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/Breset"
+        style="@android:style/Widget.Material.Light.Button.Inset"
+        android:layout_width="125dp"
+        android:layout_height="30dp"
+        android:background="@drawable/kelly"
+        android:text="RESET"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="23sp"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/TVkellyPayout" />
+
+</RelativeLayout>
